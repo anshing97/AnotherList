@@ -11,22 +11,26 @@
 <body>
   <div class="container">
     <header>
-      <h1>List</h1>
+      <h1>Another List of Things</h1>
     </header>
-    <div id="controls">
-      <button id="check" class="primary">Check all</button>
-      <button id="uncheck" class="primary">Uncheck all</button>
-      <button id="clear" class="danger">Clear checked</button>
-    </div>
     <div id="list-container">
       <form>
         <input id="add-item" type="text" placeholder="Enter an item...">
       </form>
       <ul id="list">
         <li class="item"><input type="checkbox"><label>Something that needs to be done</label></li>
-        <li class="item"><input type="checkbox"><label>Something that needs to be done but requires a very long desciption to describe and having one line of text is not enough</label></li>
+        <li class="item"><input type="checkbox"><label>Something that needs to be done but requires a very long desciption and having one line of text is not enough</label></li>
       </ul>
     </div>
+    <div id="buttons">
+      <button id="check" class="primary">Check all</button>
+      <button id="uncheck" class="primary">Uncheck all</button>
+      <button id="clear" class="danger">Clear checked</button>
+    </div>    
+    <div id="empty-list-msg">
+      <div id="sun" class="rotate"><i class="icon-sun"></i></div>      
+      <p>Nothing left to do</br>Go out and enjoy the sun</p>
+    </div>    
   </div>  
   <script src="js/jquery-1.10.2.min.js"></script>
   <script src="js/app.js"></script>

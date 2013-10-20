@@ -1,12 +1,23 @@
 body {
-  background-color: #EEE;  
+  background-color: #EFEFEF;  
   margin-top: 60px;
 
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
   font-weight: 300;
 }
 
+/* defines margin for all the content */ 
+
+.container {
+  width: 700px;
+  margin: 50px auto 60px auto;
+}
+
 /* header */ 
+header {
+  margin-bottom: 50px;
+}
+
 h1 {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
@@ -14,18 +25,7 @@ h1 {
   color: #333;
 }
 
-header {
-  margin-bottom: 20px;
-}
-
-/* main content */ 
-
-.container {
-  width: 700px;
-  margin: 0 auto 0 auto;
-
-}
-
+/* list content */ 
 #list-container {
   margin-top: 10px;
   border: 1px solid #CCC;
@@ -33,12 +33,10 @@ header {
 } 
 
 /* input form */ 
-
 form {
   background-color: #76C4EC;
   padding: 10px;
 }
-
 
 input[type=text] {
   width: 97%;
@@ -66,12 +64,11 @@ input[type=text]:focus {
   line-height: 24px;
   padding: 18px 15px;
 
-  /* to indent subsequent */ 
+  /* to indent multi-lined items correctly */ 
   text-indent: -39px;
   padding-left: 49px;
 
   border-bottom: 1px solid #CCC;
-
 }
 
 ul .item:last-child {
@@ -91,9 +88,9 @@ ul .item:last-child {
   color: #CCC;
 }
 
-/* footer */ 
+/* controls */ 
 
-footer {
+#buttons {
   margin-top: 18px;
 }
 
@@ -137,4 +134,44 @@ button:active {
   -moz-box-shadow:    inset 0px 1px 4px 0px rgba(0,0,0,0.15);
   -webkit-box-shadow: inset 0px 1px 4px 0px rgba(0,0,0,0.15);
   box-shadow:         inset 0px 1px 4px 0px rgba(0,0,0,0.15);
+}
+
+/* empty state */ 
+
+#empty-list-msg {
+  margin-top: 70px;
+  text-align: center;
+  color: #AAA;
+  display: none;
+}
+
+p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  line-height: 60px;
+  letter-spacing: 1px;
+}
+
+#sun {
+  font-size: 70px;
+  margin-bottom: 20px;
+}
+
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+.rotate {
+  -webkit-animation:spin 15s linear infinite;
+  -moz-animation:spin 15s linear infinite;
+  animation:spin 15s linear infinite;
 }
