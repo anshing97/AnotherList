@@ -9,9 +9,10 @@ if (!String.prototype.trim) {
 function List () {
 
   var showed_warning = false; 
+  var showed_empty_msg = false; 
 
   this.show_input_warning = function () {
-    $('#add-item').val('').attr('placeholder', 'Please enter an item that is NOT empty...');
+    $('#add-item').val('').attr('placeholder', 'Please enter something that is NOT empty...');
     showed_warning = true; 
   }
 
@@ -28,12 +29,21 @@ function List () {
   }
 
   this.check_empty = function () {
-    if ( $('.item').length > 0 ) {
+
+    var num_items = $('.item').length; 
+
+    if ( showed_empty_msg && ( num_items > 0 ) ) {
+
       $('#empty-list-msg').hide();
       $('#buttons').show();
-    } else {
+      showed_empty_msg = false;  
+
+    } else if ( !showed_empty_msg && ( num_items === 0 ) ) {
+
       $('#empty-list-msg').delay(250).fadeIn(250);
       $('#buttons').hide();
+      showed_empty_msg = true;       
+
     }
   }
 
@@ -85,8 +95,6 @@ $(document).ready(function(){
 
     // listen for enter
     if (e.keyCode === 13) {
-
-      console.log("got osmething");
 
       var item = new String($('#add-item').val());
       item = item.trim(); /* remove white space */
