@@ -32,7 +32,7 @@ function List () {
       $('#empty-list-msg').hide();
       $('#buttons').show();
     } else {
-      $('#empty-list-msg').fadeIn(150);
+      $('#empty-list-msg').delay(250).fadeIn(250);
       $('#buttons').hide();
     }
   }
