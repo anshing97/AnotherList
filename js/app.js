@@ -68,6 +68,12 @@ function List () {
     $('.item').removeClass('checked');
   }
 
+  this.initialize = function () {
+    $('#empty-list-msg').hide();     
+  }
+
+  this.initialize();
+
 }
 
 $(document).ready(function(){
